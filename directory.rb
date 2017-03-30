@@ -28,7 +28,19 @@ def print_footer(students)
 puts "Overall, we have #{students.count} great students"
 end
 
+def students_by_letter(students)
+    puts "Select students whose names begin with what letter?"
+    puts ">"
+    letter = gets.chomp.to_s
+    students.each do |student|
+        if student[:name][0] == letter  
+           puts student
+        end
+   end 
+end
+
 students = input_students
 print_header
 print(students)
 print_footer(students)
+students_by_letter(students)
