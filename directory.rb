@@ -31,9 +31,20 @@ end
 def students_by_letter(students)
     puts "Select students whose names begin with what letter?"
     puts ">"
-    letter = gets.chomp.to_s
+    letter = $stdin.gets.chomp
     students.each do |student|
         if student[:name][0] == letter  
+           puts student
+        end
+   end 
+end
+
+def students_by_length(students)
+    puts "Select students whose names are what length or shorter long"
+    puts ">"
+    number = $stdin.gets.chomp.to_i
+    students.each do |student|
+        if student[:name].length <= number 
            puts student
         end
    end 
@@ -43,4 +54,4 @@ students = input_students
 print_header
 print(students)
 print_footer(students)
-students_by_letter(students)
+students_by_length(students)
