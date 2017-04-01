@@ -50,8 +50,26 @@ def students_by_length(students)
    end 
 end
 
-students = input_students
-print_header
-print(students)
-print_footer(students)
-students_by_length(students)
+def interactive_menu
+    students = []
+    loop do
+        puts "1. Input the Students"
+        puts "2. Print the Students"
+        puts "9. Exit"
+        selection = gets.chomp
+        case selection 
+        when "1"
+            students = input_students
+        when "2"
+            print_header
+            print(students)
+            print_footer(students)
+        when "9"
+            exit 
+        else
+            puts "I don't know what you mean, Try Again"
+        end
+    end
+end
+
+interactive_menu 
